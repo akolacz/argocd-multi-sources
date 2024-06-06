@@ -8,7 +8,7 @@ spec:
     - image:
         repoURL: nginx
         imageSelectionStrategy: SemVer
-        semverConstraints: ^1.19
+        semverConstraints: ^1.24.0
     - image:
         repoURL: prometheus
         imageSelectionStrategy: SemVer
