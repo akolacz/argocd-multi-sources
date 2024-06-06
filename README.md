@@ -13,3 +13,16 @@ Save your GitHub handle and your personal access token in environment variables:
 
 export GITHUB_USERNAME=<your github handle>
 export GITHUB_PAT=<your personal access token>
+
+Apply kargo example: 
+
+```
+kubectl apply -f kargo-example
+```
+
+Apply argocd-apps example: 
+
+```
+kubectl apply -f argocd-apps/multisourcemultiapp/app.yaml
+kubectl apply -f argocd-apps/multisourcesingleapp/app.yaml
+```
