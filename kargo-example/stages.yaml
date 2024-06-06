@@ -20,7 +20,7 @@ spec:
           value: Tag
     argoCDAppUpdates:
     - appName: multisourcesingleapp
-      appNamespace: default
+      appNamespace: argocd
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -48,4 +48,4 @@ spec:
           value: Tag
     argoCDAppUpdates:
     - appName: multisourcemultiapp
-      appNamespace: default
+      appNamespace: argocd
