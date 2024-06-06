@@ -2,3 +2,8 @@ apiVersion: kargo.akuity.io/v1alpha1
 kind: Project
 metadata:
   name: test
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Project
+metadata:
+  name: test2

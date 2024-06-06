@@ -1,2 +1,3 @@
-image:
-  tag: v2.50.0
+prometheus:
+  image:
+    tag: v2.50.0

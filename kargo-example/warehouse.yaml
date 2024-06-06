@@ -7,9 +7,18 @@ spec:
   subscriptions:
     - image:
         repoURL: nginx
-        imageSelectionStrategy: SemVer
         semverConstraint: ^1.24.0
     - image:
         repoURL: prom/prometheus
-        imageSelectionStrategy: SemVer
-        semverConstraint: ^v2.0
+        semverConstraint: ^v2.50.0
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: docker2
+  namespace: test2
+spec:
+  subscriptions:
+    - image:
+        repoURL: nginx
+        semverConstraint: ^1.24.0
