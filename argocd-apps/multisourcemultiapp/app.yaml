@@ -1,0 +1,23 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    kargo.akuity.io/authorized-stage: test:multisourcemultiapp
+  name: multisourcemultiapp
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - repoURL: registry-1.docker.io/bitnamicharts
+      chart: nginx
+      targetRevision: 15.9.0
+    - repoURL: 'https://prometheus-community.github.io/helm-charts'
+      chart: prometheus
+      targetRevision: 15.7.1
+    - repoURL: https://github.com/akolacz/argocd-multi-sources
+      targetRevision: main
+      ref: values
+  destination:
+    name: "in-cluster"
+    namespace: default

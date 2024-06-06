@@ -1,0 +1,15 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: docker
+  namespace: test
+spec:
+  subscriptions:
+    - image:
+        repoURL: nginx
+        imageSelectionStrategy: SemVer
+        semverConstraints: ^1.19
+    - image:
+        repoURL: prometheus
+        imageSelectionStrategy: SemVer
+        semverConstraints: ^v2.0

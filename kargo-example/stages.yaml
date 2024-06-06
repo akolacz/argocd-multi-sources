@@ -1,0 +1,51 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: multisourcesingleapp
+  namespace: test
+spec:
+  subscriptions:
+    warehouse: docker
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/akolacz/argocd-multi-sources
+      pullRequest: {}
+      writeBranch: main
+      readBranch: main
+      helm:
+        images:
+        - image: nginx
+          valuesFilePath: argocd-apps/multisourcemultiapp/nginx_values.yaml
+          key: tag
+          value: Tag
+    argoCDAppUpdates:
+    - appName: multisourcesingleapp
+      appNamespace: default
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: multisourcemultiapp
+  namespace: test
+spec:
+  subscriptions:
+    warehouse: docker
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/akolacz/argocd-multi-sources
+      pullRequest: {}
+      writeBranch: main
+      readBranch: main
+      helm:
+        images:
+        - image: nginx
+          valuesFilePath: argocd-apps/multisourcemultiapp/nginx_values.yaml
+          key: tag
+          value: Tag
+        - image: prometheus
+          valuesFilePath: argocd-apps/multisourcemultiapp/prometheus_values.yaml
+          key: tag
+          value: Tag
+    argoCDAppUpdates:
+    - appName: multisourcemultiapp
+      appNamespace: default
