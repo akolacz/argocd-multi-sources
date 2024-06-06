@@ -11,8 +11,10 @@ To get started, you will need a GitHub personal access token with adequate permi
 
 Save your GitHub handle and your personal access token in environment variables:
 
-export GITHUB_USERNAME=<your github handle>
-export GITHUB_PAT=<your personal access token>
+```
+export GITHUB_USERNAME="<your github handle>
+export GITHUB_PAT="<your personal access token>
+```  
 
 Apply kargo example: 
 
