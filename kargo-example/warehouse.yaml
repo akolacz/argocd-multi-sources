@@ -8,8 +8,8 @@ spec:
     - image:
         repoURL: nginx
         imageSelectionStrategy: SemVer
-        semverConstraints: ^1.24.0
+        semverConstraint: ^1.24.0
     - image:
-        repoURL: prometheus
+        repoURL: prom/prometheus
         imageSelectionStrategy: SemVer
-        semverConstraints: ^v2.0
+        semverConstraint: ^v2.0
