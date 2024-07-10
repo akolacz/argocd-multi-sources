@@ -1,9 +1,8 @@
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    kargo.akuity.io/authorized-stage: test2:multisourcemultiapp
+    kargo.akuity.io/authorized-stage: test:multisourcemultiapp
   name: multisourcemultiapp
   namespace: argocd
 spec:

@@ -13,7 +13,7 @@ spec:
       helm:
         images:
         - image: nginx
-          valuesFilePath: argocd-apps/multisourcemultiapp/nginx_values.yaml
+          valuesFilePath: argocd-apps/multisourcesingleapp/values.yaml
           key: image.tag
           value: Tag
     argoCDAppUpdates:
